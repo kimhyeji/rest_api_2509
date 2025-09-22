@@ -50,4 +50,8 @@ public class ArticleService {
 
         return article;
     }
+
+    public void delete(Article article) {
+        articleRepository.delete(article);
+    }
 }
