@@ -6,7 +6,6 @@ import com.example.demo.article.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -30,5 +29,16 @@ public class ArticleService {
         Optional<Article> optionalArticle = articleRepository.findById(id);
 
         return optionalArticle.map(article -> new ArticleDTO(article)).orElse(null);
+    }
+
+    public Article write(String subject, String content) {
+        Article article = Article.builder()
+                .subject(subject)
+                .content(content)
+                .build();
+
+        articleRepository.save(article);
+
+        return article;
     }
 }
