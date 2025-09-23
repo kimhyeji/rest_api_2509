@@ -8,10 +8,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class RsData<T> {
+public class RsData<ArticlesResponse> {
     private String resultCode;
     private String msg;
-    private T data;
+    private ArticlesResponse data;
 
     public static <T> RsData<T> of(String resultCode, String msg, T data) {
         return new RsData<>(resultCode, msg, data);
