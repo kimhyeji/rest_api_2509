@@ -21,7 +21,7 @@ import java.util.List;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(value = "/api/v1/articles", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/articles")
 @RequiredArgsConstructor
 @Tag(name = "ApiV1ArticleController", description = "게시글 CRUD API")
 public class ApiV1ArticleController {
