@@ -1,7 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Main from './pages/Main'
+import Login from './pages/Login'
+import ArticleList from './pages/ArticleList'
+
 function App() {
     return (
         <>
-            <h1>HI!!!!</h1>
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<Main />}></Route>
+                    <Route path="/auth/login" element={<Login />} />
+                    <Route path="/article/list" element={<ArticleList />} />
+                </Routes>
+            </BrowserRouter>
         </>
     )
 }
